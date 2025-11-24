@@ -6,14 +6,14 @@ require_once 'includes/functions.php';
 $productId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
 if (!$productId) {
-    header('Location: boutique.php');
+    header('Location: index.php');
     exit;
 }
 
 $product = getProductById($productId);
 
 if (!$product) {
-    header('Location: boutique.php');
+    header('Location: index.php');
     exit;
 }
 
@@ -44,7 +44,7 @@ for ($i = 0; $i <= 5; $i++) {
     <div class="py-20 bg-gray-50 min-h-screen">
         <div class="max-w-7xl mx-auto px-4">
             <!-- Back Button -->
-            <a href="boutique.php" class="flex items-center space-x-2 text-blue-600 hover:text-blue-700 mb-8 transition-colors">
+            <a href="index.php" class="flex items-center space-x-2 text-blue-600 hover:text-blue-700 mb-8 transition-colors">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                 </svg>

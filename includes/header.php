@@ -29,7 +29,7 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="index.php" class="logo">
+                    <a href="home.php" class="logo">
                         <img src="assets/images/logo.png" alt="Logikom" width="50">
                     </a>
                     <div class="text-2xl font-bold text-slate-800">
@@ -39,13 +39,13 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.php"
+                    <a href="home.php"
                         class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Accueil</a>
                     <a href="#services"
                         class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Services</a>
                     <a href="#solutions"
                         class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Solutions</a>
-                    <a href="boutique.php"
+                    <a href="index.php"
                         class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Boutique</a>
                     <a href="#apropos"
                         class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">À
@@ -121,13 +121,13 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="md:hidden bg-white border-t hidden">
                 <div class="px-2 pt-2 pb-3 space-y-1">
-                    <a href="index.php"
+                    <a href="home.php"
                         class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Accueil</a>
                     <a href="#services"
                         class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Services</a>
                     <a href="#solutions"
                         class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Solutions</a>
-                    <a href="boutique.php"
+                    <a href="index.php"
                         class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Boutique</a>
                     <a href="#apropos"
                         class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">À
