@@ -186,8 +186,8 @@ $featuredProducts = getFeaturedProducts(6);
                     </div>
                 <?php endforeach; ?>
             </div>
-            
-            <a href="index.php" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 font-semibold inline-block">
+
+            <a href="<?php echo url('index.php'); ?>" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 font-semibold inline-block">
                 Voir la Boutique
             </a>
         </div>

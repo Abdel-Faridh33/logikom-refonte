@@ -25,7 +25,7 @@
                 <p class="text-gray-600 mb-6 leading-relaxed">
                     Cartouches d'encre, toners, papiers et autres consommables pour vos équipements bureautiques.
                 </p>
-                <a href="index.php?category=Consommables%20Informatique" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-semibold">
+                <a href="<?php echo urlWithParams('index.php', ['category' => 'Consommables Informatique']); ?>" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-semibold">
                     Voir les produits
                 </a>
             </div>
@@ -43,7 +43,7 @@
                 <p class="text-gray-600 mb-6 leading-relaxed">
                     Équipements électriques, électroniques et solutions de télécommunication professionnelles.
                 </p>
-                <a href="index.php?category=Electronique,%20Electrique%20%26%20T%C3%A9l%C3%A9com" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-semibold">
+                <a href="<?php echo urlWithParams('index.php', ['category' => 'Electronique, Electrique & Télécom']); ?>" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-semibold">
                     Voir les produits
                 </a>
             </div>
@@ -61,7 +61,7 @@
                 <p class="text-gray-600 mb-6 leading-relaxed">
                     Caméras de surveillance, systèmes d'alarme et solutions de sécurité pour protéger vos locaux.
                 </p>
-                <a href="index.php?category=S%C3%A9curit%C3%A9%20%26%20Surveillance" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-semibold">
+                <a href="<?php echo urlWithParams('index.php', ['category' => 'Sécurité & Surveillance']); ?>" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-semibold">
                     Voir les produits
                 </a>
             </div>
@@ -79,7 +79,7 @@
                 <p class="text-gray-600 mb-6 leading-relaxed">
                     Routeurs, switches, câbles et tous les équipements pour vos infrastructures réseau.
                 </p>
-                <a href="index.php?category=R%C3%A9seau%20Informatique" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-semibold">
+                <a href="<?php echo urlWithParams('index.php', ['category' => 'Réseau Informatique']); ?>" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-semibold">
                     Voir les produits
                 </a>
             </div>

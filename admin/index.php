@@ -5,7 +5,7 @@ require_once '../includes/functions.php';
 
 // Vérifier si l'utilisateur est admin
 if (!isAdmin()) {
-    header('Location: ../index.php');
+    header('Location: ' . url('index.php'));
     exit;
 }
 
@@ -38,7 +38,7 @@ $products = getProducts();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administration - Groupe Logikom</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo url('assets/css/style.css'); ?>">
 </head>
 <body class="bg-gray-50">
     <!-- Header -->
@@ -47,8 +47,8 @@ $products = getProducts();
             <div class="flex items-center justify-between">
                 <h1 class="text-2xl font-bold text-gray-900">Administration Logikom</h1>
                 <div class="flex items-center space-x-4">
-                    <a href="../index.php" class="text-gray-600 hover:text-gray-900">Retour au site</a>
-                    <a href="../auth/logout.php" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg">
+                    <a href="<?php echo url('index.php'); ?>" class="text-gray-600 hover:text-gray-900">Retour au site</a>
+                    <a href="<?php echo url('auth/logout.php'); ?>" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg">
                         Déconnexion
                     </a>
                 </div>
@@ -182,7 +182,7 @@ $products = getProducts();
                                         </td>
                                         <td class="py-4 px-4">
                                             <div class="flex items-center space-x-2">
-                                                <a href="../produit.php?id=<?php echo $product['Id']; ?>" 
+                                                <a href="<?php echo urlWithParams('produit.php', ['id' => $product['Id']]); ?>"
                                                    class="p-2 text-blue-600 hover:bg-blue-50 rounded-lg">
                                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>

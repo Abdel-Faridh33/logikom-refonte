@@ -29,8 +29,8 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="home.php" class="min-w-fit">
-                        <img src="assets/images/logo.png" alt="Logikom" width="50">
+                    <a href="<?php echo url('home.php'); ?>" class="min-w-fit">
+                        <img src="<?php echo url('assets/images/logo.png'); ?>" alt="Logikom" width="50">
                     </a>
                     <div class="text-2xl font-bold text-slate-800">
                         Groupe<span class="text-red-600">Logikom</span>
@@ -41,7 +41,7 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <!-- Main page only Nav item -->
                     <?php if (basename($_SERVER['PHP_SELF']) === 'index.php'): ?>
-                        <a href="home.php"
+                        <a href="<?php echo url('home.php'); ?>"
                             class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Qui sommes-nous ?</a>
                     <?php endif; ?>
                     <!-- Home page only Nav items -->
@@ -52,14 +52,14 @@
                             class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Solutions</a>
                         <a href="#contact"
                             class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Contact</a>
-                        <a href="index.php"
+                        <a href="<?php echo url('index.php'); ?>"
                             class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Boutique</a>
                     <?php endif; ?>
 
 
                     <!-- All pages -->
                     <?php if (isAdmin()): ?>
-                        <a href="admin/"
+                        <a href="<?php echo url('admin/'); ?>"
                             class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Admin</a>
                     <?php endif; ?>
 
@@ -73,7 +73,7 @@
                                 </svg>
                                 <span><?php echo htmlspecialchars($_SESSION['username']); ?></span>
                             </div>
-                            <a href="auth/logout.php"
+                            <a href="<?php echo url('auth/logout.php'); ?>"
                                 class="flex items-center space-x-2 text-gray-700 hover:text-red-600 transition-colors duration-200">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -127,13 +127,13 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="md:hidden bg-white border-t hidden">
                 <div class="px-2 pt-2 pb-3 space-y-1">
-                    <a href="home.php"
+                    <a href="<?php echo url('home.php'); ?>"
                         class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Accueil</a>
                     <a href="#services"
                         class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Services</a>
                     <a href="#solutions"
                         class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Solutions</a>
-                    <a href="index.php"
+                    <a href="<?php echo url('index.php'); ?>"
                         class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Boutique</a>
                     <a href="#apropos"
                         class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">À
@@ -142,7 +142,7 @@
                         class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Contact</a>
 
                     <?php if (isAdmin()): ?>
-                        <a href="admin/"
+                        <a href="<?php echo url('admin/'); ?>"
                             class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Admin</a>
                     <?php endif; ?>
 
@@ -165,7 +165,7 @@
                                 </svg>
                                 <span><?php echo htmlspecialchars($_SESSION['username']); ?></span>
                             </div>
-                            <a href="auth/logout.php"
+                            <a href="<?php echo url('auth/logout.php'); ?>"
                                 class="w-full text-left text-red-600 hover:text-red-700 transition-colors duration-200">
                                 Déconnexion
                             </a>
@@ -314,7 +314,7 @@
     <div class="py-2 overflow-y-auto" style="height: calc(100vh - 4rem);">
         <!-- Lien vers toutes les catégories -->
         <div class="border-b-2 border-gray-200 py-3 px-4 bg-gray-50">
-            <a href="index.php"
+            <a href="<?php echo url('index.php'); ?>"
                 class="text-gray-900 font-bold hover:text-blue-600 flex items-center justify-between transition-colors">
                 <span>Tous les produits</span>
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -331,7 +331,7 @@
             ?>
             <div class="sidebar-category-item relative border-b border-gray-200">
                 <!-- Grande Catégorie -->
-                <a href="index.php?grande=<?php echo $grandeCategory['Id']; ?>"
+                <a href="<?php echo urlWithParams('index.php', ['grande' => $grandeCategory['Id']]); ?>"
                     class="flex items-center justify-between w-full px-4 py-3 hover:bg-blue-50 transition-colors group">
                     <span class="font-semibold text-gray-900 group-hover:text-blue-600">
                         <?php echo htmlspecialchars($grandeCategory['Nom']); ?>
@@ -356,7 +356,7 @@
                             </div>
 
                             <!-- Lien "Voir tout" -->
-                            <a href="index.php?grande=<?php echo $grandeCategory['Id']; ?>"
+                            <a href="<?php echo urlWithParams('index.php', ['grande' => $grandeCategory['Id']]); ?>"
                                 class="block px-4 py-2.5 hover:bg-blue-50 hover:text-blue-600 transition-colors font-semibold text-sm border-b border-gray-200">
                                 <div class="flex items-center justify-between">
                                     <span>Voir tout</span>
@@ -369,7 +369,7 @@
 
                             <!-- Sous-catégories -->
                             <?php foreach ($subCategories as $subCat): ?>
-                                <a href="index.php?grande=<?php echo $grandeCategory['Id']; ?>&category=<?php echo $subCat['Id']; ?>"
+                                <a href="<?php echo urlWithParams('index.php', ['grande' => $grandeCategory['Id'], 'category' => $subCat['Id']]); ?>"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:pl-6 transition-all">
                                     <?php echo htmlspecialchars($subCat['Nom']); ?>
                                 </a>

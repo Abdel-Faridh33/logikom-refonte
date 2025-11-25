@@ -1,6 +1,38 @@
 <?php
 // Fonctions utilitaires pour l'application
 
+/**
+ * Génère une URL complète en utilisant BASE_URL
+ * @param string $path Le chemin relatif (ex: 'index.php', 'admin/', 'auth/login.php')
+ * @return string L'URL complète
+ */
+function url($path = '') {
+    // Enlever le slash au début si présent
+    $path = ltrim($path, '/');
+
+    // Si BASE_URL est vide (production), retourner juste le chemin avec /
+    if (BASE_URL === '' || BASE_URL === '/') {
+        return '/' . $path;
+    }
+
+    // Sinon, combiner BASE_URL et le chemin
+    return BASE_URL . '/' . $path;
+}
+
+/**
+ * Génère une URL avec des paramètres de query string
+ * @param string $path Le chemin relatif
+ * @param array $params Les paramètres (ex: ['grande' => 7, 'category' => 44])
+ * @return string L'URL complète avec paramètres
+ */
+function urlWithParams($path, $params = []) {
+    $url = url($path);
+    if (!empty($params)) {
+        $url .= '?' . http_build_query($params);
+    }
+    return $url;
+}
+
 // Récupérer toutes les catégories grandes
 function getCategoriesGrandes() {
     return fetchAll("SELECT * FROM commerce_categorie_grande ORDER BY Nom");

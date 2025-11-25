@@ -1,9 +1,16 @@
 <?php
+// Configuration de l'URL de base
+// Pour le développement local
+define('BASE_URL', '');
+
+// Pour le déploiement sur dev.groupelogikom.com (décommenter la ligne ci-dessous)
+// define('BASE_URL', '');
+
 // Configuration de la base de données MySQL
-$host = 'localhost';
+$host = '185.98.131.91';
 $dbname = 'group2411674';
-$username = 'root';
-$password = '';
+$username = 'group2411674';
+$password = 'yvrlffqmpk';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
