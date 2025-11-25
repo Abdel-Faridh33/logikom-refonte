@@ -56,7 +56,6 @@
                             class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Boutique</a>
                     <?php endif; ?>
 
-
                     <!-- All pages -->
                     <?php if (isAdmin()): ?>
                         <a href="<?php echo url('admin/'); ?>"
@@ -135,9 +134,7 @@
                         class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Solutions</a>
                     <a href="<?php echo url('index.php'); ?>"
                         class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Boutique</a>
-                    <a href="#apropos"
-                        class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">À
-                        propos</a>
+                    
                     <a href="#contact"
                         class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Contact</a>
 
@@ -311,7 +308,7 @@
     </div>
 
     <!-- Contenu du menu avec dropdowns au survol - Scroll interne -->
-    <div class="py-2 overflow-y-auto" style="height: calc(100vh - 4rem);">
+    <div class="py-2 overflow-y-auto" style="height: calc(100vh - 4rem); z-index: 9999;">
         <!-- Lien vers toutes les catégories -->
         <div class="border-b-2 border-gray-200 py-3 px-4 bg-gray-50">
             <a href="<?php echo url('index.php'); ?>"
