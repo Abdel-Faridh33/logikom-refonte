@@ -164,7 +164,7 @@ $products = getProducts();
                                     <tr class="border-b hover:bg-gray-50">
                                         <td class="py-4 px-4">
                                             <div class="flex items-center space-x-3">
-                                                <img src="../uploads/<?php echo htmlspecialchars($product['Image']); ?>" 
+                                                <img src="../assets/images/article/<?php echo htmlspecialchars($product['Image']); ?>" 
                                                      alt="<?php echo htmlspecialchars($product['Titre']); ?>"
                                                      class="w-12 h-12 object-cover rounded-lg">
                                                 <div>

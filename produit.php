@@ -55,7 +55,7 @@ for ($i = 0; $i <= 5; $i++) {
                 <!-- Product Images -->
                 <div>
                     <div class="bg-white rounded-2xl p-6 shadow-lg mb-6">
-                        <img id="main-image" src="uploads/<?php echo htmlspecialchars($images[0]); ?>" 
+                        <img id="main-image" src="assets/images/article//<?php echo htmlspecialchars($images[0]); ?>" 
                              alt="<?php echo htmlspecialchars($product['Titre']); ?>"
                              class="w-full h-96 object-cover rounded-xl">
                     </div>
@@ -63,9 +63,9 @@ for ($i = 0; $i <= 5; $i++) {
                     <?php if (count($images) > 1): ?>
                         <div class="flex space-x-4">
                             <?php foreach($images as $index => $image): ?>
-                                <button onclick="changeMainImage('uploads/<?php echo htmlspecialchars($image); ?>', this)"
+                                <button onclick="changeMainImage('assets/images/article//<?php echo htmlspecialchars($image); ?>', this)"
                                         class="w-20 h-20 rounded-xl overflow-hidden border-2 border-gray-200 hover:border-gray-300 transition-all <?php echo $index === 0 ? 'border-blue-600' : ''; ?>">
-                                    <img src="uploads/<?php echo htmlspecialchars($image); ?>" alt="" class="w-full h-full object-cover">
+                                    <img src="uploassets/images/article/ads/<?php echo htmlspecialchars($image); ?>" alt="" class="w-full h-full object-cover">
                                 </button>
                             <?php endforeach; ?>
                         </div>

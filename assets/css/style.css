@@ -223,3 +223,141 @@ img[data-src].loaded {
         font-size: 1.125rem;
     }
 }
+
+/* Category Navigation Dropdowns - Style Amazon */
+.category-dropdown {
+    pointer-events: none;
+}
+
+.group:hover .category-dropdown {
+    pointer-events: auto;
+}
+
+/* Amélioration du hover pour les dropdowns */
+.category-nav-item {
+    position: relative;
+}
+
+.category-nav-item:hover {
+    background-color: rgba(55, 65, 81, 0.5);
+}
+
+/* Animation des flèches dans les dropdowns */
+.category-nav-item:hover svg {
+    transform: translateY(2px);
+}
+
+/* Scroll smooth dans les dropdowns */
+.category-dropdown-content {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e0 #f7fafc;
+}
+
+.category-dropdown-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.category-dropdown-content::-webkit-scrollbar-track {
+    background: #f7fafc;
+}
+
+.category-dropdown-content::-webkit-scrollbar-thumb {
+    background-color: #cbd5e0;
+    border-radius: 3px;
+}
+
+/* Empêcher le dropdown de se fermer trop rapidement */
+.group {
+    position: relative;
+}
+
+.group:hover > .absolute {
+    display: block;
+}
+
+/* Mega menu style pour les grandes listes */
+.mega-dropdown {
+    min-width: 280px;
+    max-width: 400px;
+}
+
+/* Transition douce pour l'apparition */
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.group:hover .category-dropdown {
+    animation: dropdownFadeIn 0.2s ease-out;
+}
+
+/* Sidebar Modal - Dropdowns au survol */
+.sidebar-category-item {
+    position: relative;
+}
+
+/* État initial du dropdown - caché et en position fixed */
+.sidebar-dropdown {
+    position: fixed;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+    z-index: 10001;
+    overflow-y: auto;
+}
+
+/* État visible avec la classe .show */
+.sidebar-dropdown.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Animation pour les dropdowns du sidebar */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.sidebar-dropdown.show {
+    animation: slideInFromLeft 0.2s ease-out;
+}
+
+/* Scroll personnalisé pour les dropdowns du sidebar */
+.sidebar-dropdown > div::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-dropdown > div::-webkit-scrollbar-track {
+    background: #f7fafc;
+}
+
+.sidebar-dropdown > div::-webkit-scrollbar-thumb {
+    background-color: #cbd5e0;
+    border-radius: 3px;
+}
+
+/* Empêcher le dropdown de sortir de l'écran */
+.sidebar-dropdown {
+    max-height: calc(100vh - 120px);
+}
+
+/* Hover effect sur les items du sidebar */
+.sidebar-category-item:hover {
+    background-color: rgba(239, 246, 255, 0.5);
+}

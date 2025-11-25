@@ -143,7 +143,7 @@ $featuredProducts = getFeaturedProducts(6);
                 <?php foreach($featuredProducts as $product): ?>
                     <div class="bg-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group overflow-hidden">
                         <div class="relative">
-                            <img src="uploads/<?php echo htmlspecialchars($product['Image']); ?>" 
+                            <img src="assets/images/article/<?php echo htmlspecialchars($product['Image']); ?>" 
                                  alt="<?php echo htmlspecialchars($product['Titre']); ?>"
                                  class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
                             <?php if($product['Reduction'] > 0): ?>

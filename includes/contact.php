@@ -41,7 +41,7 @@
                             </label>
                             <input type="tel" id="telephone" name="telephone"
                                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-200"
-                                   placeholder="+33 1 23 45 67 89">
+                                   placeholder="+229 01 91 93 93 93">
                         </div>
                         <div>
                             <label for="entreprise" class="block text-sm font-medium text-gray-700 mb-2">
@@ -100,7 +100,7 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold text-gray-900 mb-1">Adresse</h4>
-                                <p class="text-gray-600">123 Avenue de la Technologie<br>75001 Paris, France</p>
+                                <p class="text-gray-600">Agontinkon<br>Cotonou, Bénin</p>
                             </div>
                         </div>
                         
@@ -112,7 +112,7 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold text-gray-900 mb-1">Téléphone</h4>
-                                <p class="text-gray-600">+33 (0)1 23 45 67 89</p>
+                                <p class="text-gray-600">+229 01 91 93 93 93</p>
                             </div>
                         </div>
                         
@@ -137,8 +137,8 @@
                             <div>
                                 <h4 class="font-semibold text-gray-900 mb-1">Horaires</h4>
                                 <p class="text-gray-600">
-                                    Lundi - Vendredi: 8:00 - 18:00<br>
-                                    Samedi: 9:00 - 12:00<br>
+                                    Lundi - Vendredi: 8:00 -20:00<br>
+                                    Samedi: 9:00 - 15:00<br>
                                     Support 24/7 disponible
                                 </p>
                             </div>

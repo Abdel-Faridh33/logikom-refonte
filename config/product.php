@@ -100,7 +100,7 @@ include_once('fonction.php');
                 <div class="container">
                     <div class="header-left">
                         <div class="header-dropdown">
-                            <a style="font-size: 15px; color: #004f80e2;" href="https://wa.me/+33621412011"><i class="icon-whatsapp"></i><b> +33 6 21 41 20 11 </b></a>
+                            <a style="font-size: 15px; color: #004f80e2;" href="https://wa.me/+2290191939393"><i class="icon-whatsapp"></i><b> +229 01 91 93 93 93 </b></a>
 
                             <a style="font-size: 15px; color: #004f80e2;" href="tel:<?php echo $para['Numero']; ?>"><i class="icon-phone"></i><b> <?php echo $para['Numero']; ?> </b> </a>
                             

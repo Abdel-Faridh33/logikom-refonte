@@ -3,97 +3,85 @@
         <!-- Header -->
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                Nos <span class="text-blue-600">Services</span> Experts
+                Nos <span class="text-blue-600">Produits</span> Phares
             </h2>
             <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                Des solutions informatiques complètes pour accompagner votre croissance
+                Découvrez notre sélection de produits de qualité pour tous vos besoins
             </p>
         </div>
 
-        <!-- Services Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Products Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Consommables Informatique -->
             <div class="group bg-white hover:bg-blue-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div class="text-blue-500 mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                <div class="text-purple-500 mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-                    Infrastructure IT
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                    Consommables Informatique
                 </h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Conception, déploiement et maintenance de votre infrastructure informatique complète.
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Cartouches d'encre, toners, papiers et autres consommables pour vos équipements bureautiques.
                 </p>
+                <a href="index.php?category=Consommables%20Informatique" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-semibold">
+                    Voir les produits
+                </a>
             </div>
 
+            <!-- Electronique, Electrique & Télécom -->
             <div class="group bg-white hover:bg-blue-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div class="text-green-500 mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="text-yellow-500 mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                    Electronique, Electrique & Télécom
+                </h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Équipements électriques, électroniques et solutions de télécommunication professionnelles.
+                </p>
+                <a href="index.php?category=Electronique,%20Electrique%20%26%20T%C3%A9l%C3%A9com" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-semibold">
+                    Voir les produits
+                </a>
+            </div>
+
+            <!-- Sécurité & Surveillance -->
+            <div class="group bg-white hover:bg-blue-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div class="text-red-500 mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-                    Cybersécurité
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                    Sécurité & Surveillance
                 </h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Protection avancée contre les menaces avec solutions de sécurité multicouches.
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Caméras de surveillance, systèmes d'alarme et solutions de sécurité pour protéger vos locaux.
                 </p>
+                <a href="index.php?category=S%C3%A9curit%C3%A9%20%26%20Surveillance" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-semibold">
+                    Voir les produits
+                </a>
             </div>
 
+            <!-- Réseau Informatique -->
             <div class="group bg-white hover:bg-blue-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div class="text-purple-500 mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"/>
+                <div class="text-blue-500 mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-                    Cloud Computing
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                    Réseau Informatique
                 </h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Migration et gestion de vos données dans le cloud avec sécurité optimale.
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Routeurs, switches, câbles et tous les équipements pour vos infrastructures réseau.
                 </p>
-            </div>
-
-            <div class="group bg-white hover:bg-blue-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div class="text-orange-500 mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-                    Solutions Mobiles
-                </h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Développement d'applications mobiles et solutions de mobilité d'entreprise.
-                </p>
-            </div>
-
-            <div class="group bg-white hover:bg-blue-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div class="text-red-500 mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-                    Gestion de Données
-                </h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Optimisation, sauvegarde et récupération de vos données critiques.
-                </p>
-            </div>
-
-            <div class="group bg-white hover:bg-blue-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div class="text-indigo-500 mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-                    Support Technique
-                </h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Assistance technique 24/7 avec équipe d'experts certifiés.
-                </p>
+                <a href="index.php?category=R%C3%A9seau%20Informatique" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-semibold">
+                    Voir les produits
+                </a>
             </div>
         </div>
 

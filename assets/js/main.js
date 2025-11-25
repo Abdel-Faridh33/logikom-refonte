@@ -120,7 +120,7 @@ function displayCartItems(items) {
     } else {
         cartItemsContainer.innerHTML = items.map(item => `
             <div class="flex space-x-4 mb-6">
-                <img src="uploads/${item.Image}" alt="${item.Titre}" class="w-16 h-16 object-cover rounded-lg">
+                <img src="assets/images/article/${item.Image}" alt="${item.Titre}" class="w-16 h-16 object-cover rounded-lg">
                 
                 <div class="flex-1">
                     <h3 class="font-medium text-gray-900 mb-1">${item.Titre}</h3>
@@ -355,8 +355,71 @@ function proceedToCheckout() {
     window.location.href = 'checkout.php';
 }
 
+// Category Menu functionality - Style Amazon avec Dropdowns au Survol
+// Déclarer la fonction dans le scope global explicitement
+window.toggleCategoryMenu = function() {
+    const menu = document.getElementById('categoryMenu');
+    const overlay = document.getElementById('categoryMenuOverlay');
+
+    if (!menu || !overlay) {
+        console.error('Menu ou overlay non trouvé');
+        return;
+    }
+
+    const isMenuHidden = menu.classList.contains('-translate-x-full');
+
+    if (isMenuHidden) {
+        // Ouvrir le menu
+        console.log('Ouverture du menu');
+        menu.classList.remove('-translate-x-full');
+        menu.classList.add('translate-x-0');
+        overlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Empêcher le scroll du body
+
+        // Forcer le reflow pour s'assurer que l'animation fonctionne
+        menu.offsetHeight;
+    } else {
+        // Fermer le menu
+        console.log('Fermeture du menu');
+        menu.classList.add('-translate-x-full');
+        menu.classList.remove('translate-x-0');
+        overlay.classList.add('hidden');
+        document.body.style.overflow = ''; // Réactiver le scroll du body
+    }
+};
+
+// Fermer le menu quand on appuie sur Escape
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const menu = document.getElementById('categoryMenu');
+        if (menu && !menu.classList.contains('-translate-x-full')) {
+            toggleCategoryMenu();
+        }
+    }
+});
+
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
+    // Vérifier que le menu et l'overlay existent
+    const menu = document.getElementById('categoryMenu');
+    const overlay = document.getElementById('categoryMenuOverlay');
+
+    if (menu && overlay) {
+        console.log('✓ Menu latéral et overlay chargés correctement');
+        console.log('Menu initial classes:', menu.className);
+    } else {
+        console.error('✗ Menu ou overlay non trouvé!');
+        if (!menu) console.error('  - categoryMenu manquant');
+        if (!overlay) console.error('  - categoryMenuOverlay manquant');
+    }
+
+    // Vérifier que la fonction toggleCategoryMenu existe
+    if (typeof window.toggleCategoryMenu === 'function') {
+        console.log('✓ Fonction toggleCategoryMenu disponible dans window');
+    } else {
+        console.error('✗ Fonction toggleCategoryMenu non disponible dans window');
+    }
+
     // Load cart count on page load
     fetch('api/cart.php?action=count')
         .then(response => response.json())

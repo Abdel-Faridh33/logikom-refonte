@@ -100,6 +100,73 @@ $products = fetchAll($query, $params);
     <!-- Header -->
     <?php include 'includes/header.php'; ?>
 
+    <!-- Barre de Catégories Horizontale - Style Amazon -->
+    <div class="bg-gray-800 text-white relative max-w-full">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center space-x-1  py-2">
+                <!-- Bouton Toutes les catégories -->
+                <button onclick="toggleCategoryMenu()"
+                    class="flex items-center space-x-2 px-4 py-2 hover:bg-gray-700 transition-colors whitespace-nowrap font-medium">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <span>Toutes</span>
+                </button>
+
+                <!-- Catégories principales avec dropdowns -->
+                <?php
+                $topCategories = getCategoriesGrandes();
+                foreach ($topCategories as $cat):
+                    $subCategories = getCategoriesByGrande($cat['Id']);
+                    ?>
+                    <div class="relative group">
+                        <!-- Catégorie principale -->
+                        <a href="index.php?grande=<?php echo $cat['Id']; ?>"
+                            class="flex items-center space-x-1 px-3 py-2 hover:bg-gray-700 transition-colors whitespace-nowrap">
+                            <span><?php echo htmlspecialchars($cat['Nom']); ?></span>
+                            <?php if (!empty($subCategories)): ?>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            <?php endif; ?>
+                        </a>
+
+                        <!-- Dropdown des sous-catégories (apparaît au hover) -->
+                        <?php if (!empty($subCategories)): ?>
+                            <div
+                                class="category-dropdown absolute left-0 top-full mt-0 mega-dropdown bg-white text-gray-800 shadow-2xl rounded-b-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-200">
+                                <div class="category-dropdown-content py-2 max-h-[32rem] overflow-y-auto">
+                                    <!-- Lien "Voir tout" -->
+                                    <a href="index.php?grande=<?php echo $cat['Id']; ?>"
+                                        class="block px-4 py-3 hover:bg-blue-50 hover:text-blue-600 transition-colors font-bold text-gray-900 border-b-2 border-gray-200">
+                                        <div class="flex items-center justify-between">
+                                            <span>Voir tout</span>
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7" />
+                                            </svg>
+                                        </div>
+                                    </a>
+
+                                    <!-- Sous-catégories -->
+                                    <div class="py-1">
+                                        <?php foreach ($subCategories as $subCat): ?>
+                                            <a href="index.php?grande=<?php echo $cat['Id']; ?>&category=<?php echo $subCat['Id']; ?>"
+                                                class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors hover:pl-5">
+                                                <?php echo htmlspecialchars($subCat['Nom']); ?>
+                                            </a>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+
     <!-- Carousel Section -->
     <section class="relative w-full overflow-hidden bg-gray-900">
         <div class="relative h-[400px] md:h-[500px]">
@@ -179,23 +246,42 @@ $products = fetchAll($query, $params);
                 </p>
             </div>
 
-            <!-- Categories Grandes -->
-            <div class="mb-8">
-                <div class="flex flex-wrap gap-4 justify-center">
-                    <a href="index.php" class="px-6 py-3 rounded-full transition-all duration-300 font-medium <?php echo $selectedGrande == 0 ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600 shadow-md'; ?>">
-                        Tous les produits
-                    </a>
-                    <?php foreach($categoriesGrandes as $grande): ?>
-                        <a href="index.php?grande=<?php echo $grande['Id']; ?>" 
-                           class="px-6 py-3 rounded-full transition-all duration-300 font-medium <?php echo $selectedGrande == $grande['Id'] ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600 shadow-md'; ?>">
-                            <?php echo htmlspecialchars($grande['Nom']); ?>
+            <!-- Fil d'Ariane / Breadcrumb -->
+            <?php if ($selectedGrande > 0 || $selectedCategory > 0): ?>
+                <div class="mb-6 flex items-center text-sm text-gray-600">
+                    <a href="index.php" class="hover:text-blue-600">Accueil</a>
+                    <?php if ($selectedGrande > 0):
+                        $currentGrande = array_filter($categoriesGrandes, function($cat) use ($selectedGrande) {
+                            return $cat['Id'] == $selectedGrande;
+                        });
+                        $currentGrande = reset($currentGrande);
+                    ?>
+                        <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                        <a href="index.php?grande=<?php echo $selectedGrande; ?>" class="hover:text-blue-600">
+                            <?php echo htmlspecialchars($currentGrande['Nom']); ?>
                         </a>
-                    <?php endforeach; ?>
+                    <?php endif; ?>
+                    <?php if ($selectedCategory > 0):
+                        $subCategories = getCategoriesByGrande($selectedGrande);
+                        $currentCategory = array_filter($subCategories, function($cat) use ($selectedCategory) {
+                            return $cat['Id'] == $selectedCategory;
+                        });
+                        $currentCategory = reset($currentCategory);
+                    ?>
+                        <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                        <span class="text-gray-900 font-medium">
+                            <?php echo htmlspecialchars($currentCategory['Nom']); ?>
+                        </span>
+                    <?php endif; ?>
                 </div>
-            </div>
+            <?php endif; ?>
 
             <!-- Sous-catégories -->
-            <?php if ($selectedGrande > 0): ?>
+            <!-- <?php if ($selectedGrande > 0): ?>
                 <?php $subCategories = getCategoriesByGrande($selectedGrande); ?>
                 <?php if (!empty($subCategories)): ?>
                     <div class="mb-8">
@@ -214,7 +300,7 @@ $products = fetchAll($query, $params);
                         </div>
                     </div>
                 <?php endif; ?>
-            <?php endif; ?>
+            <?php endif; ?> -->
 
             <!-- Filters and Search -->
             <div class="bg-white p-6 rounded-2xl shadow-lg mb-8">
@@ -260,7 +346,7 @@ $products = fetchAll($query, $params);
                         <div onclick="window.location.href='produit.php?id=<?php echo $product['Id']; ?>'" 
                              class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group overflow-hidden">
                             <div class="relative">
-                                <img src="uploads/<?php echo htmlspecialchars($product['Image']); ?>" 
+                                <img src="assets/images/article/<?php echo htmlspecialchars($product['Image']); ?>" 
                                      alt="<?php echo htmlspecialchars($product['Titre']); ?>"
                                      class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
                                 <?php if($product['Reduction'] > 0): ?>
