@@ -39,22 +39,29 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <!-- Main page only Nav item -->
-                    <?php if (basename($_SERVER['PHP_SELF']) === 'index.php'): ?>
-                        <a href="<?php echo url('home.php'); ?>"
-                            class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Qui sommes-nous ?</a>
-                    <?php endif; ?>
+
                     <!-- Home page only Nav items -->
                     <?php if (basename($_SERVER['PHP_SELF']) === 'home.php'): ?>
                         <a href="#services"
                             class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Services</a>
                         <a href="#solutions"
                             class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Solutions</a>
-                        <a href="#contact"
-                            class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Contact</a>
                         <a href="<?php echo url('index.php'); ?>"
                             class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Boutique</a>
+
+                        <a href="#contact"
+                            class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Contact</a>
                     <?php endif; ?>
+
+                    <!-- Main page only Nav item -->
+                    <?php if (basename($_SERVER['PHP_SELF']) !== 'home.php'): ?>
+                        <a href="<?php echo url('home.php'); ?>"
+                            class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Qui
+                            sommes-nous ?</a>
+
+                    <?php endif; ?>
+
+
 
                     <!-- All pages -->
                     <?php if (isAdmin()): ?>
@@ -126,17 +133,24 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="md:hidden bg-white border-t hidden">
                 <div class="px-2 pt-2 pb-3 space-y-1">
-                    <a href="<?php echo url('home.php'); ?>"
-                        class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Accueil</a>
-                    <a href="#services"
-                        class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Services</a>
-                    <a href="#solutions"
-                        class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Solutions</a>
-                    <a href="<?php echo url('index.php'); ?>"
-                        class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Boutique</a>
-                    
-                    <a href="#contact"
-                        class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Contact</a>
+
+                    <?php if (basename($_SERVER['PHP_SELF']) === 'home.php'): ?>
+                        <a href="#services"
+                            class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Services</a>
+                        <a href="#solutions"
+                            class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Solutions</a>
+                        <a href="<?php echo url('index.php'); ?>"
+                            class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Boutique</a>
+
+                        <a href="#contact"
+                            class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Contact</a>
+                    <?php endif; ?>
+
+                    <?php if (basename($_SERVER['PHP_SELF']) !== 'home.php'): ?>
+                        <a href="<?php echo url('home.php'); ?>"
+                            class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">Qui
+                            sommes-nous ?</a>
+                    <?php endif; ?>
 
                     <?php if (isAdmin()): ?>
                         <a href="<?php echo url('admin/'); ?>"

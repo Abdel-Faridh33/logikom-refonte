@@ -503,7 +503,7 @@ $products = fetchAll($query, $params);
                 <!-- Back to Home -->
                 <div class="bg-gray-50 py-8 mt-12">
                     <div class="max-w-7xl mx-auto px-4 text-center">
-                        <a href="<?php echo url('home.php'); ?>"
+                        <a href="<?php echo url('index.php'); ?>"
                             class="text-blue-600 hover:text-blue-700 transition-colors">
                             ← Retour à l'accueil
                         </a>
