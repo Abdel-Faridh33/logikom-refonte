@@ -1,8 +1,17 @@
 <?php
 // Fonctions utilitaires pour l'application
 
+// Définir HOST_NAME si pas encore défini
+if (!defined('HOST_NAME')) {
+    // Pour le développement local
+    // define('HOST_NAME', 'http://localhost/logikom-refonte');
+
+    // Pour le déploiement sur dev.groupelogikom.com (décommenter la ligne ci-dessous et commenter celle du dessus)
+    define('HOST_NAME', 'https://dev.groupelogikom.com');
+}
+
 /**
- * Génère une URL complète en utilisant BASE_URL
+ * Génère une URL complète en utilisant HOST_NAME
  * @param string $path Le chemin relatif (ex: 'index.php', 'admin/', 'auth/login.php')
  * @return string L'URL complète
  */
@@ -10,13 +19,10 @@ function url($path = '') {
     // Enlever le slash au début si présent
     $path = ltrim($path, '/');
 
-    // Si BASE_URL est vide (production), retourner juste le chemin avec /
-    if (BASE_URL === '' || BASE_URL === '/') {
-        return '/' . $path;
-    }
+    print(HOST_NAME . '/' . $path);
 
-    // Sinon, combiner BASE_URL et le chemin
-    return BASE_URL . '/' . $path;
+    // Retourner HOST_NAME + chemin
+    return HOST_NAME . '/' . $path;
 }
 
 /**

@@ -14,7 +14,7 @@
             </div>
 
             <!-- Demo Info -->
-            <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
+            <!-- <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
                 <h3 class="font-semibold text-blue-900 mb-2">Compte de démonstration</h3>
                 <p class="text-sm text-blue-700 mb-2">
                     Utilisez ces identifiants pour accéder à l'interface admin :
@@ -23,7 +23,7 @@
                     <div>Nom d'utilisateur: <strong>admin</strong></div>
                     <div>Mot de passe: <strong>admin</strong></div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Form -->
             <form id="login-form" onsubmit="handleLogin(event)">

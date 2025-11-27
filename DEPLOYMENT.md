@@ -2,17 +2,19 @@
 
 ## Configuration pour LWS (Production)
 
-### 1. Configuration de BASE_URL
+### 1. Configuration de HOST_NAME
 
-Avant de déployer sur `dev.groupelogikom.com`, vous devez modifier le fichier `config/database.php` :
+Avant de déployer sur `dev.groupelogikom.com`, vous devez modifier le fichier `includes/functions.php` (lignes 5-11) :
 
 ```php
 // Commenter la ligne de développement local
-// define('BASE_URL', '/logikom-refonte');
+// define('HOST_NAME', 'http://localhost/logikom-refonte');
 
 // Décommenter la ligne de production
-define('BASE_URL', '');
+define('HOST_NAME', 'https://dev.groupelogikom.com');
 ```
+
+**Note:** HOST_NAME peut aussi être défini dans `config/database.php` si vous préférez centraliser la configuration.
 
 ### 2. Structure sur le serveur LWS
 
@@ -72,7 +74,7 @@ Pour le développement local (XAMPP), utilisez:
 
 ```php
 // Développement local
-define('BASE_URL', '/logikom-refonte');
+define('HOST_NAME', 'http://localhost/logikom-refonte');
 
 // Base de données locale
 $host = 'localhost';
@@ -87,29 +89,30 @@ Accès local: `http://localhost/logikom-refonte/home.php`
 
 ## Fonctions Helper
 
-Le projet utilise deux fonctions pour générer les URLs:
+Le projet utilise deux fonctions pour générer les URLs avec `HOST_NAME`:
 
 ### `url($path)`
-Génère une URL simple:
+Génère une URL complète:
 ```php
 <a href="<?php echo url('index.php'); ?>">Boutique</a>
-// Résultat: /index.php (en production)
-// Résultat: /logikom-refonte/index.php (en local)
+// Résultat: https://dev.groupelogikom.com/index.php (en production)
+// Résultat: http://localhost/logikom-refonte/index.php (en local)
 ```
 
 ### `urlWithParams($path, $params)`
-Génère une URL avec paramètres:
+Génère une URL complète avec paramètres:
 ```php
 <a href="<?php echo urlWithParams('index.php', ['grande' => 7, 'category' => 44]); ?>">
-// Résultat: /index.php?grande=7&category=44 (en production)
+// Résultat: https://dev.groupelogikom.com/index.php?grande=7&category=44 (en production)
+// Résultat: http://localhost/logikom-refonte/index.php?grande=7&category=44 (en local)
 ```
 
 ---
 
 ## Checklist de Déploiement
 
-- [ ] Mettre à jour `BASE_URL` dans `config/database.php`
-- [ ] Configurer les informations de connexion à la base de données
+- [ ] Mettre à jour `HOST_NAME` dans `includes/functions.php` (changer vers https://dev.groupelogikom.com)
+- [ ] Configurer les informations de connexion à la base de données dans `config/database.php`
 - [ ] Uploader tous les fichiers sur LWS
 - [ ] Vérifier que le sous-domaine pointe vers le bon dossier
 - [ ] Tester toutes les URLs principales
@@ -127,7 +130,7 @@ https://dev.groupelogikom.com/dev.groupelogikom.com/?grande=7
 ```
 
 **Solution:**
-1. Vérifier que `BASE_URL` est défini sur `''` (chaîne vide)
+1. Vérifier que `HOST_NAME` est défini sur `https://dev.groupelogikom.com`
 2. Vérifier que le sous-domaine pointe vers le contenu du dossier, pas le dossier parent
 
 ### Problème: Images non affichées
